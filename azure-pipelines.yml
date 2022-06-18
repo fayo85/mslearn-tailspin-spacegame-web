@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   demands:
-  -npm 
+  - npm 
 
 variables:
   buildConfiguration: 'Release'
@@ -20,7 +20,7 @@ steps:
   inputs: 
     packageType: sdk
     version: '6.x' 
-    
+
 - task: Npm@1 
   displayname: 'Run npm install'
   inputs:
