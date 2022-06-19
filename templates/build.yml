@@ -9,11 +9,11 @@ steps:
     arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
     projects: '**/*.csproj'
 
-- task: 
-  displayName: 'Publish the project =${{ parameters.Buildconfiguration }}'
+- task: DotNetCoreCLI@2 
+  displayName: 'Publish the project =${{ parameters.buildConfiguration }}'
   inputs: 
     command: 'publish'
     projects: '**/*.csproj'
     publishWebProjects: false 
-    arguments: '--no-build --configuration ${{ parameters.BuildConfiguration }} --output $(Build.ArtifactStagignDirectory)/${{ parameters.buildConfiguration}}' 
+    arguments: '--no-build --configuration ${{ parameters.buildConfiguration }} --output $(Build.ArtifactStagignDirectory)/${{ parameters.buildConfiguration}}' 
     zipafterpublish: true 
